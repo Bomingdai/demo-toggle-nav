@@ -2,3 +2,73 @@ body {
     background-color: #192f5e;
     font-family: sans-serif;
 }
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+/* 8888888888888888888 header & nav 888888888888888888888 */
+/* step1. Style the default sate, Starting with the mobile view, style the layout and links
+ for how they will looke when visible. */
+header{
+    background-color: white;
+    padding: 2%;
+}
+
+header a {
+    color:#3f3f3f;
+    text-decoration: none;
+    display: block;
+}
+
+.toggle-btn{
+    border:none;
+    background-color: #fff;
+}
+
+.toggle-btn:hover{
+    cursor:pointer;
+}
+
+svg rect{
+    fill:#3f3f3f;
+}
+
+.menu li{
+    line-height: 40px;
+    text-align: center;
+}
+
+/* step2. Now let's hide the menu. Once it's hidden this is tje default load stage*/
+
+header nav{
+    display: none;
+}
+
+/* step3 create  a special class that will show the menu. this class name exists only
+ in the css file.  Next the javascript will add this class to the nav element for us.*/
+.show-nav{
+    display: unset;
+}
+
+
+/* 8888888888888888888 section 88888888888888888888 */
+
+section{
+    padding:3.25rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+section p{
+    color:#d5e294;
+    border-bottom: 2px solid #d5e294;
+    padding:10px;
+    margin:10px;
+    font-size: 1.777rem;
+}
+
+section h2{
+    color:#fff;
+    font-size:3.157rem;
+}

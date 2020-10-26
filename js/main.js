@@ -1,8 +1,13 @@
 // Step 1: select the element the user will click on to make this menu show/hide. In this case it's the toggle-icon and since we are grabbing it by it's classname we need to include the period 
 
-
+var button = document.querySelector('.toggle-btn');
 
 // Step 2: add a click event to that icon
+
+button.addEventListener('click',function(){
+    // when this button is clicked , we are going to grab the nav 
+    document.querySelector('nav').classList.toggle('show-nav')
+});
 
 
 // Instructor notes: 
