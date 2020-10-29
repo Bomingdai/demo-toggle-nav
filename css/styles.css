@@ -21,9 +21,17 @@ header a {
     display: block;
 }
 
+header a:hover,
+header a:active{
+    background-color: gainsboro;
+    border-radius: 4px;
+}
+
+
 .toggle-btn{
     border:none;
     background-color: #fff;
+    outline: none;
 }
 
 .toggle-btn:hover{
@@ -42,13 +50,17 @@ svg rect{
 /* step2. Now let's hide the menu. Once it's hidden this is tje default load stage*/
 
 header nav{
-    display: none;
+    /* display: none; */
+    max-height: 0;
+    overflow:hidden;
+    transition:max-height 0.7s ease-out;
 }
 
 /* step3 create  a special class that will show the menu. this class name exists only
  in the css file.  Next the javascript will add this class to the nav element for us.*/
 .show-nav{
-    display: unset;
+    /* display: unset; */
+    max-height: 200px;
 }
 
 
@@ -71,4 +83,32 @@ section p{
 section h2{
     color:#fff;
     font-size:3.157rem;
+}
+/* step4. add media query and show the nav by default and style it as a 
+horizantal nav*/
+@media only screen and (min-width:37.5em){
+    .toggle-btn{
+        display: none;
+    }
+
+    /* set nav by default, so give it a height back */
+    header nav{
+        max-height: 200px;
+        overflow: visible;
+    }
+
+    header,
+    .menu{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu li{
+        margin-left: 0.5rem;
+    }
+
+    .menu li a{
+        padding: 0  0.5rem;
+    }
+
 }
