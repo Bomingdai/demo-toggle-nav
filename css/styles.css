@@ -18,7 +18,7 @@ header{
 header a {
     color:#3f3f3f;
     text-decoration: none;
-    display: block;
+    /* display: block; */
 }
 
 header a:hover,
@@ -50,6 +50,14 @@ svg rect{
 /* step2. Now let's hide the menu. Once it's hidden this is tje default load stage*/
 
 header nav{
+    /* style this for how it will look overlapped the main content */
+    position: absolute;
+    /* once positioning absolute, this disappears from the document flow and it doesn't
+    leave a space where it was. this does not have a background color, because it's not 
+    content the header sees anymore */
+    background-color: #fff;
+    width: 100vw;
+    left: 0;
     /* display: none; */
     max-height: 0;
     overflow:hidden;
@@ -60,7 +68,8 @@ header nav{
  in the css file.  Next the javascript will add this class to the nav element for us.*/
 .show-nav{
     /* display: unset; */
-    max-height: 200px;
+    max-height: 216px;
+    padding-bottom: 1rem;
 }
 
 
@@ -84,6 +93,32 @@ section h2{
     color:#fff;
     font-size:3.157rem;
 }
+
+.gallery{
+    display: flex;
+    flex-flow:wrap;
+    justify-content: center;
+}
+
+.thumbnail{
+    margin:0 0.5rem;
+    position: relative;
+}
+
+.thumbnail img{
+    padding-bottom: 1rem;
+}
+
+span{
+    background-color: #87a6ab;
+    color:#fff;
+    font-weight: bold;
+    padding:0.5rem 1rem;
+    border-radius: 5px;
+    position: absolute;
+    top:-20px;
+    right: -15px;
+}
 /* step4. add media query and show the nav by default and style it as a 
 horizantal nav*/
 @media only screen and (min-width:37.5em){
@@ -93,8 +128,11 @@ horizantal nav*/
 
     /* set nav by default, so give it a height back */
     header nav{
-        max-height: 200px;
+        max-height: 216px;
         overflow: visible;
+        /* reset position value and width.*/
+        position: static; 
+        width: auto;
     }
 
     header,
